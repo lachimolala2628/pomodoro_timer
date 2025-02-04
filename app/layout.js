@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "PeakFocus",
+  title: "DeepFocus",
   description: "Reach peak performance with smart timing.",
 };
 

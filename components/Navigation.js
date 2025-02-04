@@ -8,7 +8,7 @@ const Navigation = () => {
             <div className='flex items-center gap-2 cursor-pointer text-2xl'>
                 <MdAccessAlarm />
                 <h1>
-                    PeakFocus
+                    DeepFocus
                 </h1>
             </div>
             <TbSettings2 className='text-2xl cursor-pointer' />
