@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Timer from '@/components/Timer'
 import Alarm from '@/components/Alarm'
+import ModalSettings from '@/components/ModalSettings'
 
 const page = () => {
 
@@ -14,8 +15,20 @@ const page = () => {
   const [consumedSecond, setConsumedSecond] = useState(0);
   const [stage, setStage] = useState(0);
   const [istimeUp, setIsTimeUp] = useState(false);
+  const [openSetting, setOpenSetting] = useState(false);
 
   const alarmRef = useRef();
+  const pomodoroRef = useRef();
+	const shortBreakRef = useRef();
+	const longBreakRef = useRef();
+
+  const updateTimeDefaultValue = () => {
+    setPomodoro(pomodoroRef.current.value);
+    setShortBreak(shortBreakRef.current.value);
+    setLongBreak(longBreakRef.current.value);
+    setOpenSetting(false);
+    setSecond(0);
+  };
 
   const switchStage = (index) => {
     const isYes = consumedSecond && stage !== index ? confirm('Are you sure you want to switch?') : false;
@@ -49,9 +62,7 @@ const page = () => {
     setConsumedSecond(0);
     setTicking(false);
     setSecond(0);
-    setPomodoro(25);
-    setLongBreak(10);
-    setShortBreak(5);
+    updateTimeDefaultValue();
   };
 
   const timeUp = () => {
@@ -81,10 +92,10 @@ const page = () => {
   }
 
   const startTimer = () => {
-		setIsTimeUp(false);
-		muteAlarm();
-		setTicking((ticking) => !ticking);
-	};
+    setIsTimeUp(false);
+    muteAlarm();
+    setTicking((ticking) => !ticking);
+  };
 
   useEffect(() => {
     window.onbeforeunload = () => {
@@ -106,7 +117,7 @@ const page = () => {
   return (
     <div className='bg-[#111827] min-h-screen'>
       <div className='max-w-2xl min-h-screen mx-auto'>
-        <Navigation />
+        <Navigation setOpenSetting={setOpenSetting} />
         <Timer
           stage={stage}
           switchStage={switchStage}
@@ -119,6 +130,14 @@ const page = () => {
           reset={reset}
         />
         <Alarm ref={alarmRef} />
+        <ModalSettings
+          openSetting={openSetting}
+          setOpenSetting={setOpenSetting}
+          pomodoroRef={pomodoroRef}
+          shortBreakRef={shortBreakRef}
+          longBreakRef={longBreakRef}
+          updateTimeDefaultValue={updateTimeDefaultValue}
+        />
       </div>
     </div>
   )
