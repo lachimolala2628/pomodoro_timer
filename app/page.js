@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation'
 import Timer from '@/components/Timer'
 import Alarm from '@/components/Alarm'
 import ModalSettings from '@/components/ModalSettings'
+import Todo from '@/components/todo/Todo'
 
 const page = () => {
 
@@ -115,7 +116,7 @@ const page = () => {
   }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
 
   return (
-    <div className='bg-[#111827] min-h-screen'>
+    <div className='bg-[#ffffff] min-h-screen py-2'>
       <div className='max-w-2xl min-h-screen mx-auto'>
         <Navigation setOpenSetting={setOpenSetting} />
         <Timer
@@ -138,6 +139,7 @@ const page = () => {
           longBreakRef={longBreakRef}
           updateTimeDefaultValue={updateTimeDefaultValue}
         />
+        <Todo />
       </div>
     </div>
   )
