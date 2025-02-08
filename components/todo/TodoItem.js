@@ -18,7 +18,7 @@ const TodoItem = ({ todo }) => {
 
     return (
         <div
-            className={`flex border border-black rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-white ${todo.completed ? "bg-[#c6e9a7]" : "bg-[#ea2129]"
+            className={`flex border border-[#474747] rounded-lg px-3 py-1.5 gap-x-3 duration-300  text-white ${todo.completed ? "bg-[#0d9f6f]" : "bg-[#fa5754]"
                 }`}
         >
             <input
@@ -29,7 +29,7 @@ const TodoItem = ({ todo }) => {
             />
             <input
                 type="text"
-                className={`border outline-none w-full bg-transparent rounded-lg ${isTodoEditable ? "border-black px-2" : "border-transparent"
+                className={`border outline-none w-full bg-transparent rounded-lg ${isTodoEditable ? "border-[#474747] px-2" : "border-transparent"
                     } ${todo.completed ? "line-through" : ""}`}
                 value={todoMsg}
                 onChange={(e) => setTodoMsg(e.target.value)}
@@ -37,7 +37,7 @@ const TodoItem = ({ todo }) => {
             />
             {/* Edit, Save Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm border border-black justify-center items-center shrink-0 bg-[#ffffff]"
+                className="inline-flex w-8 h-8 rounded-lg text-sm border border-[#474747] justify-center items-center shrink-0 bg-[#ffffff]"
                 onClick={() => {
                     if (todo.completed) return;
 
@@ -51,7 +51,7 @@ const TodoItem = ({ todo }) => {
             </button>
             {/* Delete Todo Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm border border-black justify-center items-center bg-[#ffffff] shrink-0"
+                className="inline-flex w-8 h-8 rounded-lg text-sm border border-[#474747] justify-center items-center bg-[#ffffff] shrink-0"
                 onClick={() => deleteTodo(todo.id)}
             >
                 ❌

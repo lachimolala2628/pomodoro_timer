@@ -4,7 +4,7 @@ import { MdAccessAlarm } from "react-icons/md";
 
 const Navigation = ({ setOpenSetting }) => {
     return (
-        <nav className='pt-5 text-[#000000] flex justify-between items-center w-11/12 mx-auto font-semibold'>
+        <nav className='pt-5 text-[#474747] flex justify-between items-center w-11/12 mx-auto font-semibold'>
             <div className='flex items-center gap-2 cursor-pointer text-2xl'>
                 <MdAccessAlarm />
                 <h1>

@@ -20,8 +20,8 @@ const page = () => {
 
   const alarmRef = useRef();
   const pomodoroRef = useRef();
-	const shortBreakRef = useRef();
-	const longBreakRef = useRef();
+  const shortBreakRef = useRef();
+  const longBreakRef = useRef();
 
   const updateTimeDefaultValue = () => {
     setPomodoro(pomodoroRef.current.value);
@@ -116,30 +116,36 @@ const page = () => {
   }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
 
   return (
-    <div className='bg-[#ffffff] min-h-screen py-2'>
-      <div className='max-w-2xl min-h-screen mx-auto'>
+    <div className='bg-[#f4fae7] min-h-screen py-2 container-fluid'>
+      <div className='mx-auto row'>
         <Navigation setOpenSetting={setOpenSetting} />
-        <Timer
-          stage={stage}
-          switchStage={switchStage}
-          getTickingTime={getTickingTime}
-          seconds={seconds}
-          ticking={ticking}
-          startTimer={startTimer}
-          muteAlarm={muteAlarm}
-          isTimeUp={istimeUp}
-          reset={reset}
-        />
-        <Alarm ref={alarmRef} />
-        <ModalSettings
-          openSetting={openSetting}
-          setOpenSetting={setOpenSetting}
-          pomodoroRef={pomodoroRef}
-          shortBreakRef={shortBreakRef}
-          longBreakRef={longBreakRef}
-          updateTimeDefaultValue={updateTimeDefaultValue}
-        />
-        <Todo />
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <div>
+            <Timer
+              stage={stage}
+              switchStage={switchStage}
+              getTickingTime={getTickingTime}
+              seconds={seconds}
+              ticking={ticking}
+              startTimer={startTimer}
+              muteAlarm={muteAlarm}
+              isTimeUp={istimeUp}
+              reset={reset}
+            />
+            <Alarm ref={alarmRef} />
+            <ModalSettings
+              openSetting={openSetting}
+              setOpenSetting={setOpenSetting}
+              pomodoroRef={pomodoroRef}
+              shortBreakRef={shortBreakRef}
+              longBreakRef={longBreakRef}
+              updateTimeDefaultValue={updateTimeDefaultValue}
+            />
+          </div>
+          <div>
+            <Todo />
+          </div>
+        </div>
       </div>
     </div>
   )

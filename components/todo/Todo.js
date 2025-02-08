@@ -48,7 +48,7 @@ const Todo = () => {
 
     return (
         <TodoProvider value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}>
-            <div className="w-10/12 mx-auto pt-5 text-[#000000] flex flex-col justify-center items-center mt-10">
+            <div className="w-11/12 mx-auto pt-5 text-[#474747] flex flex-col justify-center items-center mt-20">
                 <h1 className="text-3xl text-center mb-8 mt-2 font-semibold">Track Your Productivity</h1>
                 <div className="mb-4">
                     {/* Todo form goes here */}
