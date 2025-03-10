@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "DeepFocus",
+  title: "DeepFocus - Pomodoro Timer",
   description: "Reach peak performance with smart timing.",
 };
 

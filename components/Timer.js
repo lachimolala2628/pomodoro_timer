@@ -1,8 +1,8 @@
 import React from 'react'
 import { GoMute } from "react-icons/go";
 import { BsArrowRepeat } from "react-icons/bs";
-import { HiMiniPause } from "react-icons/hi2";
-import { BsPlayFill } from "react-icons/bs";
+import { BsPause } from "react-icons/bs";
+import { CiPlay1 } from "react-icons/ci";
 
 const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTimer, isTimeUp, muteAlarm, reset }) => {
 
@@ -28,7 +28,7 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
             </div>
             <div className='flex gap-4 items-center'>
                 <button className='px-16 py-2 text-2xl rounded-md text-[#FAFAFA] tracking-widest bg-[#18181B] font-bold' onClick={startTimer}>
-                    {ticking ? <HiMiniPause /> : <BsPlayFill />}
+                    {ticking ? <BsPause /> : <CiPlay1 />}
                 </button>
                 {isTimeUp && (
                     <GoMute
