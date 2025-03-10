@@ -1,43 +1,46 @@
 import React from 'react'
 import { GoMute } from "react-icons/go";
+import { BsArrowRepeat } from "react-icons/bs";
+import { HiMiniPause } from "react-icons/hi2";
+import { BsPlayFill } from "react-icons/bs";
 
 const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTimer, isTimeUp, muteAlarm, reset }) => {
 
-    const options = ['Pomodoro', 'Short Break', 'Long Break']
+    const options = ['Deep Focus', 'Short Break', 'Long Break']
 
     return (
-        <div className='w-11/12 mx-auto pt-5 text-[#C9C7BA] flex flex-col justify-center items-center mt-10 font-semibold'>
+        <div className='w-11/12 mx-auto pt-5 text-[#18181B] flex flex-col justify-center items-center mt-10 font-semibold'>
             <div className='flex gap-6 items-center'>
                 {
                     options.map((options, index) => {
                         return (
-                            <h1 key={index} className={` ${index === stage ? 'text-[#29292B] bg-[#C9C7BA]' : ''} p-1 cursor-pointer transition-all rounded`} onClick={() => switchStage(index)}>
+                            <h1 key={index} className={` ${index === stage ? 'text-[#FAFAFA] bg-[#18181B]' : ''} px-3 py-1 cursor-pointer transition-all rounded`} onClick={() => switchStage(index)}>
                                 {options}
                             </h1>
                         )
                     })
                 }
             </div>
-            <div className='mt-12 mb-16'>
-                <h1 className='text-9xl font-bold select-none m-0 text-[#C9C7BA]'>
+            <div className='my-16'>
+                <h1 className='text-9xl font-bold select-none m-0 text-[#18181B]'>
                     {getTickingTime()}:{seconds.toString().padStart(2, '0')}
                 </h1>
             </div>
             <div className='flex gap-4 items-center'>
-                <button className='px-16 py-2 text-2xl rounded-md bg-[#C9C7BA] text-[#29292B] uppercase font-bold' onClick={startTimer}>
-                    {ticking ? "Stop" : "Start"}
+                <button className='px-16 py-2 text-2xl rounded-md text-[#FAFAFA] tracking-widest bg-[#18181B] font-bold' onClick={startTimer}>
+                    {ticking ? <HiMiniPause /> : <BsPlayFill />}
                 </button>
                 {isTimeUp && (
                     <GoMute
-                        className="text-3xl cursor-pointer rounded-md bg-[#C9C7BA] text-[#29292B] py-2 px-2"
+                        className="text-3xl cursor-pointer rounded-md text-[#FAFAFA] bg-[#18181B] py-2 px-2"
                         onClick={muteAlarm}
                     />
                 )}
             </div>
             {
                 ticking && (
-                    <button onClick={reset} className='uppercase rounded-md bg-[#C9C7BA] text-[#29292B] mt-5 px-16 py-2 text-2xl font-bold'>
-                        reset
+                    <button onClick={reset} className='rounded-md text-[#FAFAFA] tracking-widest bg-[#18181B] mt-5 px-16 py-2 text-2xl font-bold'>
+                        <BsArrowRepeat size={20} />
                     </button>
                 )
             }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useTodo } from '@/context/TodoContext';
+import { useTodo } from '@/context'
 
 const TodoForm = () => {
     const [todo, setTodo] = useState("")
@@ -18,12 +18,12 @@ const TodoForm = () => {
         <form onSubmit={add} className="flex">
             <input
                 type="text"
-                placeholder="Write Todo..."
-                className="border border-[#C9C7BA] placeholder:text-[#C9C7BA] rounded-l-lg px-3 outline-none duration-150 text-[#C9C7BA] bg-transparent py-1.5"
+                placeholder="Add a new task..."
+                className="w-full border border-[#18181B] bg-[#FAFAFA] rounded-l-lg px-3 outline-none duration-150 placeholder:text-[#18181B] py-1.5"
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
             />
-            <button type="submit" className="rounded-r-lg px-3 py-1 text-[#29292B] bg-[#C9C7BA] shrink-0">
+            <button type="submit" className="rounded-r-lg px-3 py-1 bg-[#18181B] text-[#FAFAFA] shrink-0">
                 Add
             </button>
         </form>

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+'use client'
+import { TodoForm, TodoItem } from '@/components'
 import { TodoProvider } from '@/context'
-import TodoForm from './TodoForm'
-import TodoItem from './TodoItem'
+import { useState, useEffect } from 'react'
 
 const Todo = () => {
 
@@ -48,21 +48,23 @@ const Todo = () => {
 
     return (
         <TodoProvider value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}>
-            <div className="w-11/12 mx-auto pt-5 text-[#C9C7BA] flex flex-col justify-center items-center mt-20">
-                <h1 className="text-3xl text-center mb-8 mt-2 font-semibold">Track Your Productivity</h1>
-                <div className="mb-4">
-                    {/* Todo form goes here */}
-                    <TodoForm />
-                </div>
-                <div className="flex flex-wrap gap-y-3">
-                    {/*Loop and Add TodoItem here */}
-                    {todos.map((todo) => (
-                        <div key={todo.id}
-                            className='w-full'
-                        >
-                            <TodoItem todo={todo} />
-                        </div>
-                    ))}
+            <div className="bg-[#F2EEE3] min-h-screen py-8">
+                <div className="w-full max-w-2xl mx-auto px-4 py-3 text-[#18181B]">
+                    <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
+                    <div className="mb-4">
+                        {/* Todo form goes here */}
+                        <TodoForm />
+                    </div>
+                    <div className="flex flex-wrap gap-y-3">
+                        {/*Loop and Add TodoItem here */}
+                        {todos.map((todo) => (
+                            <div key={todo.id}
+                                className='w-full'
+                            >
+                                <TodoItem todo={todo} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </TodoProvider>

@@ -4,7 +4,6 @@ import Navigation from '@/components/Navigation'
 import Timer from '@/components/Timer'
 import Alarm from '@/components/Alarm'
 import ModalSettings from '@/components/ModalSettings'
-import Todo from '@/components/todo/Todo'
 
 const page = () => {
 
@@ -17,6 +16,7 @@ const page = () => {
   const [stage, setStage] = useState(0);
   const [istimeUp, setIsTimeUp] = useState(false);
   const [openSetting, setOpenSetting] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const alarmRef = useRef();
   const pomodoroRef = useRef();
@@ -116,35 +116,34 @@ const page = () => {
   }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
 
   return (
-    <div className='bg-[#29292B] min-h-screen py-2 container-fluid'>
+    <div className='bg-[#F2EEE3] min-h-screen py-2 container-fluid'>
       <div className='mx-auto row'>
-        <Navigation setOpenSetting={setOpenSetting} />
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-          <div>
-            <Timer
-              stage={stage}
-              switchStage={switchStage}
-              getTickingTime={getTickingTime}
-              seconds={seconds}
-              ticking={ticking}
-              startTimer={startTimer}
-              muteAlarm={muteAlarm}
-              isTimeUp={istimeUp}
-              reset={reset}
-            />
-            <Alarm ref={alarmRef} />
-            <ModalSettings
-              openSetting={openSetting}
-              setOpenSetting={setOpenSetting}
-              pomodoroRef={pomodoroRef}
-              shortBreakRef={shortBreakRef}
-              longBreakRef={longBreakRef}
-              updateTimeDefaultValue={updateTimeDefaultValue}
-            />
-          </div>
-          <div>
-            <Todo />
-          </div>
+        <Navigation
+          setOpenSetting={setOpenSetting}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <div>
+          <Timer
+            stage={stage}
+            switchStage={switchStage}
+            getTickingTime={getTickingTime}
+            seconds={seconds}
+            ticking={ticking}
+            startTimer={startTimer}
+            muteAlarm={muteAlarm}
+            isTimeUp={istimeUp}
+            reset={reset}
+          />
+          <Alarm ref={alarmRef} />
+          <ModalSettings
+            openSetting={openSetting}
+            setOpenSetting={setOpenSetting}
+            pomodoroRef={pomodoroRef}
+            shortBreakRef={shortBreakRef}
+            longBreakRef={longBreakRef}
+            updateTimeDefaultValue={updateTimeDefaultValue}
+          />
         </div>
       </div>
     </div>
