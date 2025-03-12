@@ -12,7 +12,7 @@ const ModalSettings = ({
 
     const inputs = [
 		{
-			value: "Pomodo",
+			value: "Deep Work",
 			ref: pomodoroRef,
 			defaultValue: 25,
 		},

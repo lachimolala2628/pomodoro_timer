@@ -6,7 +6,7 @@ import { CiPlay1 } from "react-icons/ci";
 
 const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTimer, isTimeUp, muteAlarm, reset }) => {
 
-    const options = ['Pomodo', 'Short Break', 'Long Break']
+    const options = ['Deep Work', 'Short Break', 'Long Break']
 
     return (
         <div className='w-11/12 mx-auto pt-5 text-[#18181B] flex flex-col justify-center items-center mt-10 font-semibold'>
