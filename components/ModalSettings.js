@@ -47,7 +47,7 @@ const ModalSettings = ({
                         inputs.map((input, index) => {
                             return (
                                 <div key={index}>
-                                    <h2 className='text-[#18181B] text-sm py-2'>{input.value}</h2>
+                                    <h2 className='text-[#18181B] text-sm py-2 text-center'>{input.value}</h2>
                                     <input
                                         defaultValue={input.defaultValue}
                                         type='text'

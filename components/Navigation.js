@@ -24,7 +24,7 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
                 {/* Sidebar */}
                 <motion.aside
                     initial={{ x: "-100%" }}
-                    animate={{ x: isOpen ? 20 : "-100%" }}
+                    animate={{ x: isOpen ? 15 : "-100%" }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="fixed top-10 left-0 h-[80vh] w-56 bg-[#FAFAFA] text-[#18181B] shadow-lg p-6 rounded-2xl"
                 >
