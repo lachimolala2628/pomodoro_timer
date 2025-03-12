@@ -29,11 +29,11 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
                     className="fixed top-10 left-0 h-[80vh] w-56 bg-[#FAFAFA] text-[#18181B] shadow-lg p-6 rounded-2xl"
                 >
                     <div className="mb-6 flex items-center space-x-3">
-                        <div className="h-10 w-10 bg-black text-white flex items-center justify-center rounded-lg font-bold">
-                            <MdAccessAlarm size={24} />
+                        <div className="h-10 w-10 bg-black text-[#FAFAFA] flex items-center justify-center rounded-lg font-bold">
+                            <h1 className='font-semibold text-xl'>P</h1>
                         </div>
                         <div>
-                            <h2 className="text-lg font-semibold">DeepFocus</h2>
+                            <h2 className="text-lg font-semibold">Pomodo</h2>
                         </div>
                     </div>
 

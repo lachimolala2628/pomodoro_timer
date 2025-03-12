@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "DeepFocus - Pomodoro Timer",
-  description: "Reach peak performance with smart timing.",
+  title: "Pomodo | Pomodoro Timer",
+  description: "Your quiet companion for mindful work",
 };
 
 export default function RootLayout({ children }) {
