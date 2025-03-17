@@ -41,7 +41,7 @@ const Quotes = () => {
                 <div className="flex items-center justify-between">
                     <span className="text-neutral-500 text-sm">- {quotes.author}</span>
                     <button onClick={fetchNewQuotes} className="text-neutral-500 hover:text-neutral-800 transition">
-                        <IoRefresh />
+                        <IoRefresh size={20} />
                     </button>
                 </div>
             </div>
