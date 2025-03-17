@@ -116,7 +116,7 @@ const page = () => {
   }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
 
   return (
-    <div className='bg-[#F2EEE3] min-h-screen py-2 container-fluid'>
+    <div className='bg-[#E8E8E8] min-h-screen py-2 container-fluid'>
       <div className='mx-auto row'>
         <Navigation
           setOpenSetting={setOpenSetting}

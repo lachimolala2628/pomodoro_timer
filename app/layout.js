@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Pomodo | Pomodoro Timer",
+  title: "POMO | Pomodoro Timer",
   description: "Your quiet companion for mindful work",
 };
 
