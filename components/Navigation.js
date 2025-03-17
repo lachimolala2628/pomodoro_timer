@@ -1,11 +1,11 @@
 import React from 'react'
 import { TbSettings2 } from "react-icons/tb"
-import { MdAccessAlarm } from "react-icons/md";
 import { LiaColumnsSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import { PiTimer } from "react-icons/pi";
 import { LuListTodo } from "react-icons/lu";
+import { BsChatQuote } from "react-icons/bs";
 
 const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
 
@@ -40,12 +40,19 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
                     <nav>
                         <h3 className="text-sm font-semibold text-[#18181B] mb-2">General</h3>
                         <ul className="space-y-4 mb-6">
-                            <li className="flex items-center p-2 space-x-2 text-[#18181B] rounded-md hover:bg-gray-100 cursor-pointer">
-                                <PiTimer size={20} className='text-gray-500' /> <span>Timer</span>
-                            </li>
+                            <Link href='/'>
+                                <li className="flex items-center p-2 space-x-2 text-[#18181B] rounded-md hover:bg-gray-100 cursor-pointer">
+                                    <PiTimer size={20} className='text-gray-500' /> <span>Timer</span>
+                                </li>
+                            </Link>
                             {/* <Link href='/todo'>
                                 <li className="flex items-center p-2 space-x-2 text-[#18181B] rounded-md hover:bg-gray-100 cursor-pointer">
                                     <LuListTodo size={20} className='text-gray-500' /> <span>Tasks</span>
+                                </li>
+                            </Link>
+                            <Link href='/quote'>
+                                <li className="flex items-center p-2 space-x-2 text-[#18181B] rounded-md hover:bg-gray-100 cursor-pointer">
+                                    <BsChatQuote size={20} className='text-gray-500' /> <span>Quotes</span>
                                 </li>
                             </Link> */}
                         </ul>

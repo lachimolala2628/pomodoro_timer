@@ -41,7 +41,7 @@ const ModalSettings = ({
                     </h2>
                     <IoCloseCircleOutline className='text-2xl cursor-pointer' onClick={() => setOpenSetting(false)} />
                 </div>
-                <div className='h-1 w-full bg-[#18181B] my-5'></div>
+                <div className='h-[1.5px] w-full bg-[#18181B] my-5'></div>
                 <div className='flex gap-5'>
                     {
                         inputs.map((input, index) => {
