@@ -37,19 +37,19 @@ const Quotes = () => {
 
     return (
         <div className="flex items-center justify-center min-h-screen px-4">
-            <div className="max-w-md w-full bg-[#FAFAFA] shadow-lg rounded-2xl p-6 space-y-4 border border-[#727272]">
-                <h1 className="text-2xl font-semibold text-[#0C0C0C] text-center">Quotes</h1>
+            <div className="max-w-md w-full bg-[#FAFAFA] shadow-lg rounded-2xl p-6 space-y-4 border-none">
+                <h1 className="text-3xl font-semibold text-[#665442] text-center">Quotes</h1>
                 <div className="relative">
-                    <p className="text-lg text-center text-[#0C0C0C] leading-relaxed italic">
+                    <p className="text-lg text-center text-[#6A5842] leading-relaxed italic">
                         <span className="text-4xl">&ldquo;</span>
                         {quotes.text}
                         <span className="text-4xl">&rdquo;</span>
                     </p>
                 </div>
-                <hr className="border-[#727272]" />
+                <hr className="border-[#0C0C0C]" />
                 <div className="flex items-center justify-between">
-                    <span className="text-[#727272] text-sm">- {quotes.author}</span>
-                    <button onClick={fetchNewQuotes} className="text-[#727272]">
+                    <span className="text-[#6A5842] text-sm">- {quotes.author}</span>
+                    <button onClick={fetchNewQuotes} className="text-[#6A5842]">
                         <IoRefresh size={20} />
                     </button>
                 </div>

@@ -21,7 +21,7 @@ const TodoItem = ({ todo }) => {
 
     return (
         <div
-            className={`flex border border-[#727272] rounded-lg px-3 py-1.5 gap-x-3 duration-300 ${todo.completed ? "text-[#0C0C0C] bg-[#FAFAFA]" : "text-[#0C0C0C] bg-[#FAFAFA]"
+            className={`flex shadow-md rounded-lg px-3 py-1.5 gap-x-3 duration-300 ${todo.completed ? "text-[#0C0C0C] bg-[#FAFAFA]" : "text-[#0C0C0C] bg-[#FAFAFA]"
                 }`}
         >
             <input
@@ -32,7 +32,7 @@ const TodoItem = ({ todo }) => {
             />
             <input
                 type="text"
-                className={`border outline-none w-full bg-transparent rounded-lg text-[#0C0C0C] ${isTodoEditable ? "border-[#727272] px-2" : "border-transparent"
+                className={`border outline-none w-full bg-transparent rounded-lg text-[#0C0C0C] ${isTodoEditable ? "border-[#0C0C0C] px-2" : "border-transparent"
                     } ${todo.completed ? "line-through" : ""}`}
                 value={todoMsg}
                 onChange={(e) => setTodoMsg(e.target.value)}
@@ -40,7 +40,7 @@ const TodoItem = ({ todo }) => {
             />
             {/* Edit, Save Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm text-[#0C0C0C] border border-[#727272] justify-center items-center shrink-0"
+                className="inline-flex w-8 h-8 rounded-lg text-sm text-[#0C0C0C] bg-[#FAFAFA] border border-[#0C0C0C] justify-center items-center shrink-0"
                 onClick={() => {
                     if (todo.completed) return;
 
@@ -54,7 +54,7 @@ const TodoItem = ({ todo }) => {
             </button>
             {/* Delete Todo Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm text-[#0C0C0C] border border-[#727272] justify-center items-center shrink-0"
+                className="inline-flex w-8 h-8 rounded-lg text-sm text-[#0C0C0C] bg-[#FAFAFA] border border-[#0C0C0C] justify-center items-center shrink-0"
                 onClick={() => deleteTodo(todo.id)}
             >
                 <AiOutlineDelete />

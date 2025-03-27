@@ -48,9 +48,10 @@ const Todo = () => {
 
     return (
         <TodoProvider value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}>
-            <div className="bg-[#E8E8E8] min-h-screen py-8">
+            <div className="bg-[#E3D5CA] min-h-screen py-8">
                 <div className="w-full max-w-2xl mx-auto px-4 py-3 text-[#0C0C0C]">
-                    <h1 className="text-2xl font-semibold text-center mb-8 mt-2">Your tasks</h1>
+                    <h1 className="text-4xl font-semibold mt-2">Tasks</h1>
+                    <p className='text-lg mb-5 mt-4'>Focus on a few tasks and make progress on them.</p>
                     <div className="mb-4">
                         {/* Todo form goes here */}
                         <TodoForm />

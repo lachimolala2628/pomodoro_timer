@@ -15,15 +15,15 @@ const TodoForm = () => {
     }
 
     return (
-        <form onSubmit={add} className="flex">
+        <form onSubmit={add} className="flex shadow-md">
             <input
                 type="text"
                 placeholder="Add a new task..."
-                className="w-full border border-[#727272] bg-[#E8E8E8] rounded-l-lg px-3 outline-none duration-150 placeholder:text-[#0C0C0C] py-1.5"
+                className="w-full border-none bg-[#FAFAFA] rounded-l-lg px-3 outline-none duration-150 placeholder:text-[#0C0C0C] py-2"
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
             />
-            <button type="submit" className="rounded-r-lg px-3 py-1 bg-[#0C0C0C] text-[#E8E8E8] shrink-0">
+            <button type="submit" className="rounded-r-lg px-3 py-1 font-semibold bg-[#F0E4D6] text-[#634F4F] shrink-0">
                 Add
             </button>
         </form>
