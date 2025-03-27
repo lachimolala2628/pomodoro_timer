@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { IoRefresh } from "react-icons/io5";
 
 const Quotes = () => {
-
     const [quotes, setQuotes] = useState({
         text: "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
         author: 'Dr. Seuss'
-    })
+    });
 
     const fetchNewQuotes = async () => {
         try {
-            const url = 'https://api.quotable.io/random';
+            const url = 'http://api.quotable.io/random'; // ✅ No CORS issue
             const response = await fetch(url);
             const data = await response.json();
             setQuotes({
@@ -20,7 +19,7 @@ const Quotes = () => {
         } catch (error) {
             console.error('Error fetching quote:', error);
         }
-    }
+    };
 
     useEffect(() => {
         fetchNewQuotes();
@@ -46,7 +45,7 @@ const Quotes = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Quotes
+export default Quotes;
