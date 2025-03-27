@@ -8,16 +8,26 @@ const Quotes = () => {
     });
 
     const fetchNewQuotes = async () => {
+        const url = 'https://motivation-quotes4.p.rapidapi.com/api';
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': 'd2eb687d5cmsh1c777a9971d61a9p12508ajsn4e97750b2973',
+                'x-rapidapi-host': 'motivation-quotes4.p.rapidapi.com'
+            }
+        };
+
         try {
-            const url = 'http://api.quotable.io/random'; // ✅ No CORS issue
-            const response = await fetch(url);
-            const data = await response.json();
+            const response = await fetch(url, options);
+            const data = await response.text(); // API returns a string
+            const parsedData = JSON.parse(data); // Convert string to JSON
+
             setQuotes({
-                text: data.content,
-                author: data.author,
+                text: parsedData.quote, // Adjust based on actual API response
+                author: parsedData.author || "Unknown", // Handle missing author
             });
         } catch (error) {
-            console.error('Error fetching quote:', error);
+            console.error("Error fetching quote:", error);
         }
     };
 
