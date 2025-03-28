@@ -26,7 +26,7 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
                     initial={{ x: "-100%" }}
                     animate={{ x: isOpen ? 10 : "-100%" }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="fixed top-10 left-0 h-[90vh] w-56 bg-[#F5EBE0] shadow-xl p-6 rounded-xl"
+                    className="fixed top-10 left-0 h-[75vh] w-56 bg-[#F5EBE0] shadow-xl p-6 rounded-xl"
                 >
                     <div className="mb-6 flex items-center space-x-3">
                         <div className="h-10 w-10 text-[#FAFAFA] bg-[#18181B] flex items-center justify-center rounded-lg font-bold">
