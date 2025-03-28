@@ -10,7 +10,7 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
 
     return (
         <div className='w-11/12 mx-auto pt-5 text-[#6A5842] flex flex-col justify-center items-center mt-10 font-semibold'>
-            <div className='flex gap-6 items-center'>
+            <div className='flex gap-6 sm:gap-10 items-center'>
                 {
                     options.map((options, index) => {
                         return (
