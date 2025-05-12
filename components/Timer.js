@@ -6,15 +6,15 @@ import { CiPlay1 } from "react-icons/ci";
 
 const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTimer, isTimeUp, muteAlarm, reset }) => {
 
-    const options = ['Deep Work', 'Short Break', 'Long Break']
+    const options = ['Work', 'Break']
 
     return (
-        <div className='w-11/12 mx-auto pt-5 text-[#6A5842] flex flex-col justify-center items-center mt-10 font-semibold'>
-            <div className='flex gap-6 sm:gap-10 items-center'>
+        <div className='w-11/12 mx-auto text-[#6A5842] flex flex-col justify-center items-center font-semibold'>
+            <div className='flex gap-5 sm:gap-10 items-center'>
                 {
                     options.map((options, index) => {
                         return (
-                            <h1 key={index} className={` ${index === stage ? 'text-[#6A5842] bg-[#F5EBE0]' : ''} px-2 py-1 text-sm cursor-pointer transition-all rounded`} onClick={() => switchStage(index)}>
+                            <h1 key={index} className={` ${index === stage ? 'text-[#6A5842] bg-[#F5EBE0]' : ''} px-14 sm:px-16 py-1 text-sm cursor-pointer transition-all rounded`} onClick={() => switchStage(index)}>
                                 {options}
                             </h1>
                         )
@@ -27,7 +27,7 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
                 </h1>
             </div>
             <div className='flex flex-col gap-4 items-center'>
-                <button className='px-40 py-2 text-2xl rounded-md text-[#634F4F] bg-[#F5EBE0] font-bold' onClick={startTimer}>
+                <button className='px-36 sm:px-44 py-2 text-2xl rounded-md text-[#634F4F] bg-[#F5EBE0] font-bold' onClick={startTimer}>
                     {ticking ? <BsPause /> : <CiPlay1 />}
                 </button>
                 {isTimeUp && (

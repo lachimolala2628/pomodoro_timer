@@ -1,10 +1,11 @@
 import React from 'react'
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { BsFillCupHotFill } from "react-icons/bs";
+import { IoTime } from "react-icons/io5";
 
 const ModalSettings = ({
     pomodoroRef,
     shortBreakRef,
-    longBreakRef,
     openSetting,
     setOpenSetting,
     updateTimeDefaultValue,
@@ -12,19 +13,16 @@ const ModalSettings = ({
 
     const inputs = [
 		{
-			value: "Deep Work",
+			value: "Work",
+            icon: <BsFillCupHotFill />,
 			ref: pomodoroRef,
 			defaultValue: 25,
 		},
 		{
-			value: "Short Break",
+			value: "Break",
+            icon: <IoTime />,
 			ref: shortBreakRef,
 			defaultValue: 5,
-		},
-		{
-			value: "Long Break",
-			ref: longBreakRef,
-			defaultValue: 10,
 		},
 	];
 
@@ -47,7 +45,7 @@ const ModalSettings = ({
                         inputs.map((input, index) => {
                             return (
                                 <div key={index}>
-                                    <h2 className='text-[#665442] text-sm py-2 text-center'>{input.value}</h2>
+                                    <h2 className='text-[#665442] text-sm py-2 text-center flex items-center justify-center gap-2'>{input.icon} {input.value}</h2>
                                     <input
                                         defaultValue={input.defaultValue}
                                         type='text'

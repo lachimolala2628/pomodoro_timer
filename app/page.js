@@ -9,7 +9,6 @@ const page = () => {
 
   const [pomodoro, setPomodoro] = useState(25);
   const [shortBreak, setShortBreak] = useState(5);
-  const [longBreak, setLongBreak] = useState(10);
   const [seconds, setSecond] = useState(0);
   const [ticking, setTicking] = useState(false);
   const [consumedSecond, setConsumedSecond] = useState(0);
@@ -21,12 +20,10 @@ const page = () => {
   const alarmRef = useRef();
   const pomodoroRef = useRef();
   const shortBreakRef = useRef();
-  const longBreakRef = useRef();
 
   const updateTimeDefaultValue = () => {
     setPomodoro(pomodoroRef.current.value);
     setShortBreak(shortBreakRef.current.value);
-    setLongBreak(longBreakRef.current.value);
     setOpenSetting(false);
     setSecond(0);
   };
@@ -45,7 +42,6 @@ const page = () => {
     const timeStage = {
       0: pomodoro,
       1: shortBreak,
-      2: longBreak,
     }
     return timeStage[stage];
   }
@@ -54,7 +50,6 @@ const page = () => {
     const updateStage = {
       0: setPomodoro,
       1: setShortBreak,
-      2: setLongBreak,
     }
     return updateStage[stage];
   }
@@ -113,17 +108,19 @@ const page = () => {
     return () => {
       clearInterval(timer);
     }
-  }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
+  }, [seconds, pomodoro, shortBreak, ticking]);
 
   return (
-    <div className='bg-[#E3D5CA] min-h-screen py-2 container-fluid'>
-      <div className='mx-auto row'>
+    <div className='bg-[#E3D5CA] w-full min-h-screen flex flex-col relative'>
+      <div className='absolute top-4 right-4 z-50'>
         <Navigation
           setOpenSetting={setOpenSetting}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
-        <div>
+      </div>
+      <div className='flex-grow flex justify-center items-center'>
+        <div className='text-center'>
           <Timer
             stage={stage}
             switchStage={switchStage}
@@ -141,7 +138,6 @@ const page = () => {
             setOpenSetting={setOpenSetting}
             pomodoroRef={pomodoroRef}
             shortBreakRef={shortBreakRef}
-            longBreakRef={longBreakRef}
             updateTimeDefaultValue={updateTimeDefaultValue}
           />
         </div>
