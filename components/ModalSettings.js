@@ -34,7 +34,7 @@ const ModalSettings = ({
                 transform: 'translate(-50%, -50%)',
             }}>
                 <div className='flex items-center justify-between'>
-                    <h2 className='text-1xl uppercase font-bold tracking-wider'>
+                    <h2 className='text-1xl uppercase font-bold tracking-wider font-lora'>
                         Time Setting
                     </h2>
                     <IoCloseCircleOutline className='text-2xl cursor-pointer text-[#665442]' onClick={() => setOpenSetting(false)} />
@@ -49,7 +49,7 @@ const ModalSettings = ({
                                     <input
                                         defaultValue={input.defaultValue}
                                         type='text'
-                                        className='w-full bg-transparent border text-[#6A5842] border-[#665442] py-2 rounded outline-none text-center'
+                                        className='w-full bg-transparent border text-[#6A5842] font-libra border-[#665442] py-2 rounded outline-none text-center'
                                         ref={input.ref}
                                     />
                                 </div>
@@ -57,7 +57,7 @@ const ModalSettings = ({
                         })
                     }
                 </div>
-                <button className='text-[#634F4F] bg-[#F0E4D6] uppercase rounded w-full mt-5 py-2 px-2 font-semibold' onClick={updateTimeDefaultValue}>
+                <button className='text-[#634F4F] bg-[#F0E4D6] font-libra uppercase rounded w-full mt-5 py-2 px-2 font-semibold' onClick={updateTimeDefaultValue}>
                     save
                 </button>
             </div>

@@ -19,11 +19,11 @@ const TodoForm = () => {
             <input
                 type="text"
                 placeholder="Add a new task..."
-                className="w-full border-none bg-[#FAFAFA] rounded-l-lg px-3 outline-none duration-150 placeholder:text-[#0C0C0C] py-2"
+                className="w-full border-none bg-[#FAFAFA] font-libra rounded-l-lg px-3 outline-none duration-150 placeholder:text-[#0C0C0C] placeholder:font-libra py-2"
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
             />
-            <button type="submit" className="rounded-r-lg px-3 py-1 font-semibold bg-[#F0E4D6] text-[#634F4F] shrink-0">
+            <button type="submit" className="rounded-r-lg px-3 py-1 font-libra font-semibold bg-[#F0E4D6] text-[#634F4F] shrink-0">
                 Add
             </button>
         </form>

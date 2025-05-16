@@ -14,7 +14,7 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
                 {
                     options.map((options, index) => {
                         return (
-                            <h1 key={index} className={` ${index === stage ? 'text-[#6A5842] bg-[#F5EBE0]' : ''} px-14 sm:px-16 py-1 text-sm cursor-pointer transition-all rounded`} onClick={() => switchStage(index)}>
+                            <h1 key={index} className={` ${index === stage ? 'text-[#6A5842] bg-[#F5EBE0]' : ''} px-14 sm:px-16 py-2 text-sm cursor-pointer font-libra transition-all rounded`} onClick={() => switchStage(index)}>
                                 {options}
                             </h1>
                         )
@@ -22,7 +22,7 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
                 }
             </div>
             <div className='my-12'>
-                <h1 className='text-9xl sm:text-[160px] font-bold select-none m-0 text-[#665442]'>
+                <h1 className='text-9xl sm:text-[160px] font-bold select-none m-0 text-[#665442] font-lora'>
                     {getTickingTime()}:{seconds.toString().padStart(2, '0')}
                 </h1>
             </div>

@@ -30,36 +30,36 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
                 >
                     <div className="mb-6 flex items-center space-x-3">
                         <div className="h-10 w-10 text-[#FAFAFA] bg-[#18181B] flex items-center justify-center rounded-lg font-bold">
-                            <h1 className='font-semibold text-2xl'>P</h1>
+                            <h1 className='font-semibold text-2xl font-lora'>P</h1>
                         </div>
                         <div>
-                            <h2 className="text-lg font-semibold uppercase text-[#665442]">Pomo</h2>
+                            <h2 className="text-lg font-semibold uppercase text-[#665442] font-lora">Pomo</h2>
                         </div>
                     </div>
 
                     <nav>
-                        <h3 className="text-sm font-bold text-[#665442] mb-2">General</h3>
+                        <h3 className="text-sm font-bold text-[#665442] mb-2 font-lora">General</h3>
                         <ul className="space-y-4 mb-6">
                             <Link href='/'>
-                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] rounded-md cursor-pointer">
+                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer">
                                     <PiTimer size={20} className='text-[#6A5842]' /> <span>Timer</span>
                                 </li>
                             </Link>
                             <Link href='/todo'>
-                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] rounded-md cursor-pointer">
+                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer">
                                     <LuListTodo size={20} className='text-[#6A5842]' /> <span>Tasks</span>
                                 </li>
                             </Link>
                             <Link href='/quote'>
-                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] rounded-md cursor-pointer">
+                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer">
                                     <BsChatQuote size={20} className='text-[#6A5842]' /> <span>Quotes</span>
                                 </li>
                             </Link>
                         </ul>
 
-                        <h3 className="text-sm font-bold text-[#665442] mb-2">Settings</h3>
+                        <h3 className="text-sm font-bold text-[#665442] font-lora mb-2">Settings</h3>
                         <ul className="space-y-4">
-                            <li className="flex items-center p-2 space-x-2 text-[#6A5842] rounded-md cursor-pointer"
+                            <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer"
                                 onClick={() => setOpenSetting((value) => !value)}>
                                 <TbSettings2 size={18} className='text-[#6A5842]' /> <span>General</span>
                             </li>

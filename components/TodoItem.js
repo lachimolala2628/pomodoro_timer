@@ -32,7 +32,7 @@ const TodoItem = ({ todo }) => {
             />
             <input
                 type="text"
-                className={`border outline-none w-full bg-transparent rounded-lg text-[#0C0C0C] ${isTodoEditable ? "border-[#0C0C0C] px-2" : "border-transparent"
+                className={`border outline-none w-full bg-transparent font-libra rounded-lg text-[#0C0C0C] ${isTodoEditable ? "border-[#0C0C0C] px-2" : "border-transparent"
                     } ${todo.completed ? "line-through" : ""}`}
                 value={todoMsg}
                 onChange={(e) => setTodoMsg(e.target.value)}
