@@ -39,7 +39,7 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
             </div>
             {
                 ticking && (
-                    <button onClick={reset} className='rounded-md text-[#0C0C0C] mt-5 py-2 text-2xl font-bold'>
+                    <button onClick={reset} className='rounded-md text-[#0C0C0C] mt-5 pt-1 text-2xl font-bold'>
                         <BsArrowRepeat size={20} />
                     </button>
                 )
