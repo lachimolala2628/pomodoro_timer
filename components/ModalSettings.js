@@ -30,7 +30,7 @@ const ModalSettings = ({
         <>
             <div className={`absolute h-full w-full left-0 top-0 bg-black bg-opacity-30 ${openSetting ? '' : 'hidden'}`} onClick={() => setOpenSetting(false)}>
             </div>
-            <div className={`${openSetting ? '' : 'hidden'} max-w-xl bg-[#FAFAFA] absolute text-[#665442] sm:w-96 w-11/12 left-1/2 top-1/2 rounded-md p-5`} style={{
+            <div className={`${openSetting ? '' : 'hidden'} max-w-xl bg-[#FAFAFA] absolute text-[#665442] sm:w-96 w-11/12 left-1/2 top-1/2 rounded-md p-5 z-50`} style={{
                 transform: 'translate(-50%, -50%)',
             }}>
                 <div className='flex items-center justify-between'>
