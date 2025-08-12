@@ -63,5 +63,6 @@ npm run dev
 
 
 ## 👨‍💻 Author
+
 **Ayush Kumar**
 Creative Frontend Developer passionate about turning complex ideas into clean, responsive, and user-friendly web experiences.
