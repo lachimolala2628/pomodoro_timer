@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import Navigation from '@/components/Navigation'
 import Timer from '@/components/Timer'
 import Alarm from '@/components/Alarm'
 import ModalSettings from '@/components/ModalSettings'
+import { useNavigation } from '@/context/NavigationContext'
 
 const page = () => {
 
@@ -14,8 +14,7 @@ const page = () => {
   const [consumedSecond, setConsumedSecond] = useState(0);
   const [stage, setStage] = useState(0);
   const [istimeUp, setIsTimeUp] = useState(false);
-  const [openSetting, setOpenSetting] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const { openSetting, setOpenSetting } = useNavigation();
 
   const alarmRef = useRef();
   const pomodoroRef = useRef();
@@ -112,13 +111,6 @@ const page = () => {
 
   return (
     <div className='bg-[#E3D5CA] w-full min-h-screen flex flex-col relative'>
-      <div className='absolute top-4 right-4 z-50'>
-        <Navigation
-          setOpenSetting={setOpenSetting}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        />
-      </div>
       <div className='flex-grow flex justify-center items-center'>
         <div className='text-center'>
           <Timer

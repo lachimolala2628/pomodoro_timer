@@ -1,5 +1,6 @@
 import { Libre_Franklin, Lora } from "next/font/google";
 import "./globals.css";
+import AppShell from "@/components/AppShell";
 
 const libra = Libre_Franklin({
   variable: "--font-libra",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
         className={`${libra.variable} ${lora.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
