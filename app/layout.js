@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${libra.variable} ${lora.variable} antialiased`}
+        className={`${libra.variable} ${lora.variable} antialiased`} suppressHydrationWarning
       >
         {children}
       </body>

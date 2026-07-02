@@ -14,13 +14,13 @@ const ModalSettings = ({
     const inputs = [
 		{
 			value: "Work",
-            icon: <BsFillCupHotFill />,
+            icon: <IoTime />,
 			ref: pomodoroRef,
 			defaultValue: 25,
 		},
 		{
 			value: "Break",
-            icon: <IoTime />,
+            icon: <BsFillCupHotFill />,
 			ref: shortBreakRef,
 			defaultValue: 5,
 		},
