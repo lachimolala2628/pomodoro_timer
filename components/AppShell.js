@@ -6,8 +6,8 @@ import { NavigationProvider, useNavigation } from '@/context/NavigationContext'
 const sounds = [
     { id: 'cafe', label: 'Cafe', file: '/cafe.mp3' },
     { id: 'ambient', label: 'Ambient', file: '/ambient.mp3' },
-    { id: 'coffee', label: 'Coffee', file: '/coffee.mp3' },
-    { id: 'oceanwaves', label: 'Ocean Waves', file: '/oceanwaves.mp3' },
+    { id: 'brew', label: 'Brew', file: '/coffee.mp3' },
+    { id: 'ocean', label: 'Ocean', file: '/oceanwaves.mp3' },
 ]
 
 const ShellContent = ({ children }) => {
