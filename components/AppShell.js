@@ -1,9 +1,33 @@
 'use client'
+import { useRef, useState, useEffect } from 'react'
 import Navigation from './Navigation'
 import { NavigationProvider, useNavigation } from '@/context/NavigationContext'
 
+const sounds = [
+    { id: 'cafe', label: 'Cafe', file: '/cafe.mp3' },
+    { id: 'ambient', label: 'Ambient', file: '/ambient.mp3' },
+    { id: 'coffee', label: 'Coffee', file: '/coffee.mp3' },
+    { id: 'oceanwaves', label: 'Ocean Waves', file: '/oceanwaves.mp3' },
+]
+
 const ShellContent = ({ children }) => {
     const { isOpen, setIsOpen, setOpenSetting } = useNavigation()
+    const [activeSound, setActiveSound] = useState(null)
+    const soundRef = useRef()
+
+    const toggleSound = (id) => {
+        setActiveSound((prev) => (prev === id ? null : id))
+    }
+
+    useEffect(() => {
+        if (!activeSound) {
+            soundRef.current.pause()
+            return
+        }
+        const track = sounds.find((s) => s.id === activeSound)
+        soundRef.current.src = track.file
+        soundRef.current.play()
+    }, [activeSound])
 
     return (
         <>
@@ -12,8 +36,12 @@ const ShellContent = ({ children }) => {
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
                     setOpenSetting={setOpenSetting}
+                    sounds={sounds}
+                    activeSound={activeSound}
+                    toggleSound={toggleSound}
                 />
             </div>
+            <audio ref={soundRef} loop />
             {children}
         </>
     )

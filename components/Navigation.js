@@ -3,11 +3,11 @@ import { TbSettings2 } from "react-icons/tb"
 import { LiaColumnsSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
 import Link from 'next/link';
-import { PiTimer } from "react-icons/pi";
+import { PiTimer, PiWaveformBold } from "react-icons/pi";
 import { LuListTodo } from "react-icons/lu";
 import { BsChatQuote } from "react-icons/bs";
 
-const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
+const Navigation = ({ setOpenSetting, setIsOpen, isOpen, sounds, activeSound, toggleSound }) => {
 
     return (
         <>
@@ -57,7 +57,24 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen }) => {
                             </Link>
                         </ul>
 
-                        <h3 className="text-sm font-bold text-[#665442] font-lora mb-2">Settings</h3>
+                        <h3 className="text-sm font-bold text-[#665442] font-lora mb-2 mt-6">Ambience</h3>
+                        <ul className="space-y-4">
+                            {sounds.map((sound) => (
+                                <li
+                                    key={sound.id}
+                                    className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer"
+                                    onClick={() => toggleSound(sound.id)}
+                                >
+                                    <PiWaveformBold
+                                        size={20}
+                                        className={activeSound === sound.id ? 'text-[#6A5842]' : 'text-[#6A5842]'}
+                                    />
+                                    <span>{sound.label}{activeSound === sound.id ? ' (Playing)' : ''}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <h3 className="text-sm font-bold text-[#665442] font-lora mb-2 mt-6">Settings</h3>
                         <ul className="space-y-4">
                             <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer"
                                 onClick={() => setOpenSetting((value) => !value)}>
