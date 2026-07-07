@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react'
 import { TbSettings2 } from "react-icons/tb"
 import { LiaColumnsSolid } from "react-icons/lia";

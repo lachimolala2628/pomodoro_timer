@@ -1,7 +1,9 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import { IoRefresh } from "react-icons/io5";
 
 const Quotes = () => {
+
     const [quotes, setQuotes] = useState({
         text: "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
         author: 'Dr. Seuss'
@@ -46,7 +48,7 @@ const Quotes = () => {
                         <span className="text-4xl">&rdquo;</span>
                     </p>
                 </div>
-                <hr className="border-[#0C0C0C]" />
+                <hr className="border-[#6A5842]" />
                 <div className="flex items-center justify-between">
                     <span className="text-[#6A5842] text-sm font-lora">- {quotes.author}</span>
                     <button onClick={fetchNewQuotes} className="text-[#6A5842]">

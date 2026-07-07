@@ -56,7 +56,7 @@ const Todo = () => {
                         {/* Todo form goes here */}
                         <TodoForm />
                     </div>
-                    <div className="flex flex-wrap gap-y-3">
+                    <div className="flex flex-wrap gap-y-1.5">
                         {/*Loop and Add TodoItem here */}
                         {todos.map((todo) => (
                             <div key={todo.id}

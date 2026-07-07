@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTodo } from '@/context'
-import { FiEdit } from "react-icons/fi";
+import { FiEdit2 } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
 import { IoSaveOutline } from "react-icons/io5";
 
@@ -15,24 +15,22 @@ const TodoItem = ({ todo }) => {
         setIsTodoEditable(false)
     }
     const toggleCompleted = () => {
-        //console.log(todo.id);
         toggleComplete(todo.id)
     }
 
     return (
-        <div
-            className={`flex shadow-md rounded-lg px-3 py-1.5 gap-x-3 duration-300 ${todo.completed ? "text-[#0C0C0C] bg-[#FAFAFA]" : "text-[#0C0C0C] bg-[#FAFAFA]"
-                }`}
-        >
+        <div className={
+            `flex rounded-lg px-3 py-1.5 gap-x-3 duration-300 ${todo.completed ? "text-[#0C0C0C]" : "text-[#0C0C0C]"}`
+        }>
             <input
                 type="checkbox"
-                className="cursor-pointer]"
+                className="cursor-pointer"
                 checked={todo.completed}
                 onChange={toggleCompleted}
             />
             <input
                 type="text"
-                className={`border outline-none w-full bg-transparent font-libra rounded-lg text-[#0C0C0C] ${isTodoEditable ? "border-[#0C0C0C] px-2" : "border-transparent"
+                className={`outline-none w-full font-libra rounded-lg text-[#0C0C0C] ${isTodoEditable ? "bg-[#FAFAFA] shadow-[0_2px_10px_rgba(0,0,0,0.1)] px-2" : "bg-transparent"
                     } ${todo.completed ? "line-through" : ""}`}
                 value={todoMsg}
                 onChange={(e) => setTodoMsg(e.target.value)}
@@ -40,7 +38,7 @@ const TodoItem = ({ todo }) => {
             />
             {/* Edit, Save Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm text-[#0C0C0C] bg-[#FAFAFA] border border-[#0C0C0C] justify-center items-center shrink-0"
+                className="inline-flex w-9 h-9 rounded-lg text-sm text-[#0C0C0C] justify-center items-center shrink-0"
                 onClick={() => {
                     if (todo.completed) return;
 
@@ -50,11 +48,11 @@ const TodoItem = ({ todo }) => {
                 }}
                 disabled={todo.completed}
             >
-                {isTodoEditable ? <IoSaveOutline /> : <FiEdit />}
+                {isTodoEditable ? <IoSaveOutline /> : <FiEdit2 />}
             </button>
             {/* Delete Todo Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm text-[#0C0C0C] bg-[#FAFAFA] border border-[#0C0C0C] justify-center items-center shrink-0"
+                className="inline-flex w-9 h-9 rounded-lg text-sm text-[#0C0C0C] justify-center items-center shrink-0"
                 onClick={() => deleteTodo(todo.id)}
             >
                 <AiOutlineDelete />

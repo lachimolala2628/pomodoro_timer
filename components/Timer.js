@@ -32,14 +32,14 @@ const Timer = ({ stage, switchStage, getTickingTime, seconds, ticking, startTime
                 </button>
                 {isTimeUp && (
                     <GoMute
-                        className="text-4xl cursor-pointer rounded-md text-[#0C0C0C] py-2"
+                        className="text-4xl cursor-pointer rounded-md text-[#634F4F] py-2"
                         onClick={muteAlarm}
                     />
                 )}
             </div>
             {
                 ticking && (
-                    <button onClick={reset} className='rounded-md text-[#0C0C0C] mt-5 pt-1 text-2xl font-bold'>
+                    <button onClick={reset} className='rounded-md text-[#634F4F] mt-5 pt-1 text-2xl font-bold'>
                         <BsArrowRepeat size={20} />
                     </button>
                 )
