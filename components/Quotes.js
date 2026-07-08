@@ -51,7 +51,7 @@ const Quotes = () => {
                 <hr className="border-[#6A5842]" />
                 <div className="flex items-center justify-between">
                     <span className="text-[#6A5842] text-sm font-lora">- {quotes.author}</span>
-                    <button onClick={fetchNewQuotes} className="text-[#6A5842]">
+                    <button onClick={fetchNewQuotes} className="text-[#634F4F]">
                         <IoRefresh size={20} />
                     </button>
                 </div>

@@ -25,7 +25,7 @@ const TodoForm = () => {
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
             />
-            <button type="submit" className="rounded-r-lg px-3 py-1 font-libra font-semibold bg-[#F0E4D6] text-[#0C0C0C] shrink-0">
+            <button type="submit" className="rounded-r-lg px-3 py-1 font-libra font-semibold bg-[#F5EBE0] text-[#634F4F] border-none outline-none shrink-0">
                 <IoAdd />
             </button>
         </form>

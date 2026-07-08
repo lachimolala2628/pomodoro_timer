@@ -16,9 +16,9 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen, sounds, activeSound, to
 
     return (
         <>
-            <nav className='pt-5 text-[#665442] flex justify-end items-center mx-auto font-semibold'>
+            <nav className='pt-5 flex justify-end items-center mx-auto font-semibold'>
                 <button
-                    className="p-2 m-4 text-[#665442] fixed z-50"
+                    className="p-2 m-4 text-[#634F4F] fixed z-50"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <LiaColumnsSolid size={28} /> : <LiaColumnsSolid size={28} />}
@@ -46,18 +46,18 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen, sounds, activeSound, to
                         <h3 className="text-sm font-bold text-[#665442] mb-2 font-lora">General</h3>
                         <ul className="space-y-4 mb-6">
                             <Link href='/'>
-                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer">
-                                    <PiTimer size={20} className='text-[#6A5842]' /> <span>Timer</span>
+                                <li className="flex items-center p-2 space-x-2 font-libra rounded-md cursor-pointer">
+                                    <PiTimer size={20} className='text-[#634F4F]' /> <span className='text-[#6A5842]'>Timer</span>
                                 </li>
                             </Link>
                             <Link href='/todo'>
-                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer">
-                                    <LuListTodo size={20} className='text-[#6A5842]' /> <span>Tasks</span>
+                                <li className="flex items-center p-2 space-x-2 font-libra rounded-md cursor-pointer">
+                                    <LuListTodo size={20} className='text-[#634F4F]' /> <span className='text-[#6A5842]'>Tasks</span>
                                 </li>
                             </Link>
                             <Link href='/quote'>
-                                <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer">
-                                    <BsChatQuote size={20} className='text-[#6A5842]' /> <span>Quotes</span>
+                                <li className="flex items-center p-2 space-x-2 font-libra rounded-md cursor-pointer">
+                                    <BsChatQuote size={20} className='text-[#634F4F]' /> <span className='text-[#6A5842]'>Quotes</span>
                                 </li>
                             </Link>
                         </ul>
@@ -88,7 +88,7 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen, sounds, activeSound, to
                                 {sounds.map((sound) => (
                                     <li
                                         key={sound.id}
-                                        className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer"
+                                        className="flex items-center p-2 space-x-2 font-libra rounded-md cursor-pointer"
                                         onClick={() => toggleSound(sound.id)}
                                     >
                                         <div className="flex items-end justify-center space-x-0.5" style={{ height: '5pt', width: '9pt' }}>
@@ -115,7 +115,7 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen, sounds, activeSound, to
                                                 />
                                             ))}
                                         </div>
-                                        <span>{sound.label}</span>
+                                        <span className='text-[#6A5842]'>{sound.label}</span>
                                     </li>
                                 ))}
                             </motion.ul>
@@ -123,9 +123,9 @@ const Navigation = ({ setOpenSetting, setIsOpen, isOpen, sounds, activeSound, to
 
                         <h3 className="text-sm font-bold text-[#665442] font-lora mb-2 mt-6">Settings</h3>
                         <ul className="space-y-4">
-                            <li className="flex items-center p-2 space-x-2 text-[#6A5842] font-libra rounded-md cursor-pointer"
+                            <li className="flex items-center p-2 space-x-2 font-libra rounded-md cursor-pointer"
                                 onClick={() => setOpenSetting((value) => !value)}>
-                                <TbSettings2 size={18} className='text-[#6A5842]' /> <span>General</span>
+                                <TbSettings2 size={18} className='text-[#634F4F]' /> <span className='text-[#6A5842]'>General</span>
                             </li>
                         </ul>
                     </nav>
