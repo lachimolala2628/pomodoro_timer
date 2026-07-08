@@ -20,12 +20,7 @@ A beautifully developed and well-designed Pomodoro Timer with integrated Todo li
 
 - **Aesthetic UI** – Minimal yet visually pleasing interface.
 
-
-### 🚀 Coming Soon
-
 - 🎵 **Custom Ambient Sounds** – Choose background sounds to stay in flow.  
-
-- 🌙 **Dark/Light Mode Toggle** – Personalize your work environment.
 
 ---
 
